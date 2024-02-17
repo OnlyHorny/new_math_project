@@ -83,6 +83,9 @@ h3 {
     margin: 10px;
     font-size: 12pt;
 }
+.auth-form button:hover {
+    background-color: #d6d3d3;
+}
 .auth {
     display: flex;
     flex-direction: column;
