@@ -111,3 +111,17 @@ h3 {
     margin: 10px;
     padding: 10px;
 }
+div.error-message {
+    height: 1%;
+}
+p.description {
+    margin-top: 3%;
+    height: 1%;
+}
+
+div.username {
+    height: 80%;
+}
+.buttons {
+    height: 13%;
+}
