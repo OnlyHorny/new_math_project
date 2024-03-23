@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+body {
+    background-color: #ebeaea;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+h3 {
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main-window {
+    min-width: 900px;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 85%;
+    height: 90%;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    border-radius: 15px;
+    justify-content: space-between;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.452);
+}
+.main-window h3 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20pt;
+}
+.main-window > .header {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-size: 12pt;
+    max-height: 43px;
+    border-radius: 15px 15px 0 0;
+    background-color: #e4e1e1;
+}
+.label-class {
+    height: 60%;
+    width: 90%;
+    margin: 0 auto;
+}
+.main-block {
+    width: 100%;
+    height: 100%;
+}
+.head {
+    margin-top: 15px;
+    height: 12%;
+    display: flex;
+    flex-direction: row;
+}
+.welcome {
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+}
+.welcome span {
+    height: 60%;
+    width: 80%;
+    font-size: 16pt;
+}
+.head-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-right: 20px;
+}
+.head-buttons img {
+    width: 100%;
+    height: 100%;
+}
+.chat-button {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+.game-button {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+.profile-button {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+.img-div {
+    display: flex;
+    border: 1px black solid;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.head-buttons span {
+    display: block;
+    width: 100%;
+    height: 40%;
+    text-align: center;
+    font-size: 10pt;
+}
+.workspace {
+    width: 90%;
+    margin: 0 auto;
+}
+.img-div:hover {
+    background-color: #e4e1e1;
+}
+input {
+    height: 20pt;
+    font-size: 16pt;
+    padding: 3px;
+    margin: 10px;
+    width: 95%;
+    max-width: 350px;
+}
+button {
+    height: 6%;
+    width: 18%;
+    margin-top: 15px;
+    font-size: 14pt;
+}
+.red-button {
+    background-color: rgb(170, 64, 64);
+    color: white;
+}
