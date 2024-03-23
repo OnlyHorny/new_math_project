@@ -22,39 +22,51 @@
                     <h3>Регистрация</h3>
                 </div>
                 <div class="auth-form">
-                    <div class="username">
+                    <form method="post">
+                    <div class="username" id="reg-block">
                         <label for="username">Имя пользователя:</label><br />
                         <input
                             type="text"
+                            name="username"
                             id="username"
                             placeholder="Введите имя пользователя"
                         /><br />
                         <label for="password">Пароль:</label><br />
                         <input
                             type="password"
+                            name="password"
                             id="password"
                             placeholder="Введите пароль"
                         /><br />
-                        <label for="password">Повторите пароль:</label><br />
+                        <label for="repeat_password">Повторите пароль:</label><br />
                         <input
                             type="password"
-                            id="password"
-                            placeholder="Введите пароль"
+                            name="repeat_password"
+                            id="repeat_password"
+                            placeholder="Повторите пароль"
                         /><br />
                     </div>
+
                     <div class="buttons">
+                        <button type="submit" name="return">Обратно</button>
                         <a href="auth.html">
-                            <button type="submit" name="return">Обратно</button>
-                        </a>
-                        <a href="auth.html">
-                            <button type="submit" name="reg">
+                            <button type="submit" name="reg" id="reg" disabled>
                                 Регистрация
                             </button>
                         </a>
                     </div>
+                    {% if not is_successful %}
+                    <div class="error-message">
+                        {% with message = get_flashed_messages()[0] %}
+                        <p class="description">{{message}}</p>
+                        {% endwith %}
+                    </div>
+                    {% endif %}
+                    </form>
                 </div>
             </div>
         </div>
         <script src="../../static/script/auth.js"></script>
     </body>
+    <script src="../../static/script/sign_up_control.js"></script>
 </html>
