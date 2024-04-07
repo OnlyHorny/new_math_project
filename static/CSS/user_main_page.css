@@ -7,6 +7,7 @@
 }
 a {
     text-decoration: none;
+    color: black;
 }
 body {
     background-color: #ebeaea;
@@ -42,6 +43,7 @@ h3 {
     display: flex;
     align-items: center;
     text-align: left;
+    min-height: 43px;
     font-size: 12pt;
     max-height: 43px;
     border-radius: 15px 15px 0 0;
@@ -122,12 +124,20 @@ h3 {
 }
 .theme-viewer {
     flex-basis: 185%;
+    overflow: auto;
+    background-color: #e4e1e1;
+    border-radius: 10px;
+    border: 1.5px solid black;
+    margin-top: 40px;
+    height: 85%;
+    width: 80%;
 }
 .theme-selector {
     padding-left: 15px;
     display: flex;
     flex-direction: column;
     max-width: 390px;
+    max-height: 620px;
 }
 .theme-selector span {
     font-size: 15pt;
@@ -165,4 +175,21 @@ h3 {
 }
 .img-div:hover {
     background-color: #e4e1e1;
+}
+.theme-page {
+    overflow: auto;
+    height: 90%;
+    width: 85%;
+    background-color: white;
+    margin: 0 auto;
+    padding: 1.5em;
+    border: thin black solid;
+}
+.theme-page h3 {
+    font-size: 16pt;
+    height: 3em;
+    text-decoration: underline;
+}
+.theme-page p {
+    text-align: justify;
 }
