@@ -24,7 +24,6 @@ def reg():
         else:
             return redirect(url_for('auth'))
 
-
     html = render_template('login form/reg.html',
                            is_successful=is_successful)
     return html

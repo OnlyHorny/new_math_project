@@ -24,7 +24,7 @@
                     </div>
                     <div class="head-buttons">
                         <div class="profile-button">
-                            <a href="main_page.html">
+                            <a href="{{url_for('main_page')}}">
                                 <div class="img-div">
                                     <img
                                         src="../../static/images/back-icon.png"
@@ -36,23 +36,29 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="workspace">
                     <label for="username">Имя пользователя:</label><br />
-                    <input type="text" id="username" value="student1" /><br />
+                    <input type="text" id="username" value="{{username}}" /><br />
                     <label for="password">Пароль:</label><br />
                     <input
                         type="text"
                         id="password"
-                        value="easiest-password123"
+                        value="{{password}}"
                     /><br />
-                    <a href="main_page.html"><button>Сохранить</button> </a>
+                    <a href="{{url_for('main_page')}}"><button id="save_button">Сохранить</button> </a>
                     <br /><br />
-                    <a href="../login form/auth.html"
-                        ><button class="red-button">Выйти из аккаунта</button>
+                    <a href="auth"
+                        ><button class="red-button" id="log_out_button">Выйти из аккаунта</button>
                     </a>
+                    <script src="../../static/script/button_handler.js"></script>
+                    {% with messages = get_flashed_messages() %}
+                    <label>{{messages[0]}}</label>
+                    {% endwith %}
                 </div>
             </div>
         </div>
+
         <script src="../../static/script/auth.js"></script>
     </body>
 </html>

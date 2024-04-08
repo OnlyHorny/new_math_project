@@ -15,10 +15,12 @@ def auth():
             return redirect(url_for('reg'))
         if check_auth(conn, username, password) and 'login' in request.form.keys():
             session['is_auth'] = True
+            session['username'] = username
             return redirect(url_for('main_page'))
         else:
             flash('Имя пользователя или пароль указаны неверно:(')
             session['is_auth'] = False
+
     html = render_template("login form/auth.html",
                            is_auth=session.get('is_auth'))
     return html
