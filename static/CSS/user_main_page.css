@@ -192,4 +192,15 @@ h3 {
 }
 .theme-page p {
     text-align: justify;
+    height: auto;
+}
+.theme-page input {
+    height: auto;
+    width: auto;
+    font-size: 14pt;
+}
+.theme-page button {
+    height: auto;
+    width: auto;
+    font-size: 14pt;
 }

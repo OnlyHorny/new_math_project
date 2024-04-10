@@ -21,10 +21,12 @@ def main_page():
 
 @app.route('/<int:lesson_id>')
 def lesson(lesson_id):
+    student_name = session.get('username') if 'username' in session else 'student'
     conn = get_db_connection()
     content = get_lesson(conn, lesson_id)
     lessons = get_all_lessons(conn)
     html = render_template('student/main_page.html',
+                           student_name=student_name,
                            lessons=lessons,
                            lesson_content=content.iloc[0].to_list())
     return html
