@@ -14,6 +14,7 @@ def auth():
         if 'reg' in request.form.keys():
             return redirect(url_for('reg'))
         if check_auth(conn, username, password) and 'login' in request.form.keys():
+            print('grt')
             session['is_auth'] = True
             session['username'] = username
             return redirect(url_for('main_page'))

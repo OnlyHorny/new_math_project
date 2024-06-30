@@ -1,9 +1,9 @@
 import pandas as pd
 
 
-def check_auth(conn, login, password):
+def check_auth(conn, username, password):
     df = pd.read_sql(f'''
-    SELECT * FROM userdata
-    WHERE login = '{login}' AND password = '{password}';
+    SELECT * FROM user
+    WHERE login = '{username}' AND password = '{password}';
     ''', conn)
     return df.size > 0

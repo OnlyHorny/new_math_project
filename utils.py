@@ -2,5 +2,5 @@ import sqlite3
 
 
 def get_db_connection():
-    path = 'Lessons.db'
+    path = 'identifier.sqlite'
     return sqlite3.connect(path)

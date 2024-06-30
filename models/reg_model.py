@@ -1,19 +1,19 @@
 import pandas as pd
 
 
-def check_username(conn, login):
+def check_username(conn, username):
     df = pd.read_sql(f'''
-    SELECT * FROM userdata
-    WHERE login = '{login}';
+    SELECT * FROM User
+    WHERE Login = '{username}';
 ''', conn)
     return df.size > 0
 
 
-def insert_user(conn, login, password):
+def insert_user(conn, username, password):
     cur = conn.cursor()
     cur.execute(f'''
-    INSERT INTO userdata
-    (login, password)
-    VALUES ('{login}', '{password}');
+    INSERT INTO User
+    (Login, Password)
+    VALUES ('{username}', '{password}');
 ''')
     conn.commit()
