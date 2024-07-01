@@ -14,7 +14,7 @@
         <div class="main-window">
             <div class="header">
                 <div class="label-class">
-                    <label>Обучающая система по дисциплине "Теория игр"</label>
+                    <label>Обучающая система по дисциплине «Теория игр»</label>
                 </div>
             </div>
             <div class="main-block">
@@ -23,6 +23,28 @@
                         <span>Добро пожаловать, {{student_name}}!</span>
                     </div>
                     <div class="head-buttons">
+                        <div class="profile-button">
+                            <a href="сhat">
+                                <div class="img-div">
+                                    <img
+                                        src="../../static/images/chat-icon.png"
+                                        alt=""
+                                    />
+                                </div>
+                                <span>Чат</span>
+                            </a>
+                        </div>
+                        <div class="profile-button">
+                            <a href="game">
+                                <div class="img-div">
+                                    <img
+                                        src="../../static/images/game-icon.png"
+                                        alt=""
+                                    />
+                                </div>
+                                <span>Игра</span>
+                            </a>
+                        </div>
                         <div class="profile-button">
                             <a href="profile">
                                 <div class="img-div">
@@ -38,12 +60,12 @@
                 </div>
                 <div class="workspace">
                     <div class="theme-selector">
-                        <span>Выберите тему:</span>
+                        <span>Выберите тему</span>
                         <div class="theme-list">
                             {% for index, item in lessons.iterrows() %}
-                            <a href="{{item['Id_tema']}}"
+                            <a href="{{item['ID_lessons']}}"
                                 ><div class="theme">
-                                    <span>{{item['Name_tema']}}</span>
+                                    <span>{{item['Subject']}}</span>
                                 </div></a
                             >
                             {% endfor %}
@@ -52,11 +74,12 @@
                     <div class="theme-viewer">
                         <div class="theme-page">
                             <h3>Тема: {{lesson_content[0]}}</h3>
-                            <p>
-                                {{lesson_content[1]}}
-                            </p>
+                            <p>{{lesson_content[1]}}</p>
                             <br />
+                            <h3>Практическое задание</h3>
+
                             <p>{{lesson_content[2]}}</p>
+                            <br />
                             <input
                                 type="text"
                                 placeholder="Введите ответ"

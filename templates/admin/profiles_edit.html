@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../../static/CSS/admin_profiles.css"
+        />
+        <title>Страница администратора</title>
+    </head>
+    <body>
+        <div class="main-window">
+            <div class="header">
+                <div class="label-class">
+                    <label>Обучающая система по дисциплине «Теория игр»</label>
+                </div>
+            </div>
+            <div class="main-block">
+                <div class="head">
+                    <div class="head-buttons">
+                        <div class="profile-button">
+                            <a href="{{url_for('main_page')}}">
+                                <div class="img-div">
+                                    <img
+                                        src="../../static/images/back-icon.png"
+                                        alt=""
+                                    />
+                                </div>
+                                <span>Назад</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="welcome">
+                        <span>Панель администратора</span>
+                    </div>
+                </div>
+                <div class="workspace">
+                    <div class="user-selector">
+                        <span>Список пользователей</span>
+                        <div class="search">
+                            <input
+                                type="text"
+                                placeholder="Введите логин"
+                            /><button>Найти</button><br />
+                        </div>
+
+                        <div class="user-list">
+                            {% for index, item in users.iterrows() %}
+                            <a href="{{item['username']}}"
+                                ><div class="user">
+                                    <span>{{item['user']}}</span>
+                                </div></a
+                            >
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="user-viewer">
+                        <label for="last_name">Фамилия</label>
+                        <input type="text" /><br />
+                        <label for="1st_name">Имя</label>
+                        <input type="text" /><br />
+                        <label for="f_name">Отчество</label>
+                        <input type="text" /><br />
+                        <label for="email">Email</label>
+                        <input type="text" /><br />
+                        <label for="school">Учебное заведение</label>
+                        <input type="text" /><br />
+                        <!-- если студент: -->
+                        <label for="area">Название направления</label>
+                        <input type="text" /><br />
+                        <label for="course">Курс</label>
+                        <input type="text" /><br />
+                        <div class="profile-buttons">
+                            <button id="set_teacher">
+                                Назначить преподавателем
+                            </button>
+                            <button id="save_button">Сохранить</button>
+                        </div>
+
+                        <!-- если преподаватель:
+                        <label for="area">Научная степень</label>
+                        <input type="text" /><br />
+                        <label for="course">Должность</label>
+                        <input type="text" /><br /> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../static/script/auth.js"></script>
+        <script src="../../static/script/check_answer.js"></script>
+    </body>
+</html>

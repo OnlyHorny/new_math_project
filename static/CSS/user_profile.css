@@ -62,6 +62,7 @@ h3 {
     height: 12%;
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
 }
 .welcome {
     display: flex;
@@ -77,8 +78,10 @@ h3 {
 .head-buttons {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: start;
     margin-right: 20px;
+    width: 40%;
+    margin-left: 20px;
 }
 .head-buttons img {
     width: 100%;
@@ -116,7 +119,24 @@ h3 {
 }
 .workspace {
     width: 90%;
+    height: 80%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+.col1 {
+    flex-direction: column;
+    align-content: space-between;
+}
+.col2 {
+    flex-direction: column;
+    align-content: space-between;
+}
+.buttons {
+    padding-top: 20%;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .img-div:hover {
     background-color: #e4e1e1;
@@ -130,12 +150,18 @@ input {
     max-width: 350px;
 }
 button {
-    height: 6%;
-    width: 18%;
+    height: 10%;
+    width: 10em;
     margin-top: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
     font-size: 14pt;
 }
 .red-button {
     background-color: rgb(170, 64, 64);
     color: white;
+}
+.game {
+    text-align: center;
+    justify-content: center;
 }

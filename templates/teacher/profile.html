@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../../static/CSS/user_profile.css"
+        />
+        <title>Страница преподавателя</title>
+    </head>
+    <body>
+        <div class="main-window">
+            <div class="header">
+                <div class="label-class">
+                    <label>Обучающая система по дисциплине "Теория игр"</label>
+                </div>
+            </div>
+            <div class="main-block">
+                <div class="head">
+                    <div class="head-buttons">
+                        <div class="profile-button">
+                            <a href="{{url_for('main_page')}}">
+                                <div class="img-div">
+                                    <img
+                                        src="../../static/images/back-icon.png"
+                                        alt=""
+                                    />
+                                </div>
+                                <span>Назад</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="welcome">
+                        <span>Редактирование профиля</span>
+                    </div>
+                </div>
+
+                <div class="workspace">
+                    <div class="col1">
+                        <label for="last_name">Фамилия</label><br />
+                        <input type="text" /><br />
+                        <label for="1st_name">Имя</label><br />
+                        <input type="text" /><br />
+                        <label for="f_name">Отчество</label><br />
+                        <input type="text" /><br />
+                        <label for="email">Email</label><br />
+                        <input type="text" /><br />
+                    </div>
+                    <div class="col2">
+                        <label for="school">Учебное заведение</label><br />
+                        <input type="text" /><br />
+                        <label for="area">Научная степень</label><br />
+                        <input type="text" /><br />
+                        <label for="course">Должность</label><br />
+                        <input type="text" /><br />
+                        <div class="buttons">
+                            <a href="auth"
+                                ><button class="red-button" id="log_out_button">
+                                    Выйти из аккаунта
+                                </button>
+                            </a>
+                            <a href="{{url_for('main_page')}}"
+                                ><button id="save_button">Сохранить</button>
+                            </a>
+
+                            <script src="../../static/script/button_handler.js"></script>
+                            {% with messages = get_flashed_messages() %}
+                            <label>{{messages[0]}}</label>
+                            {% endwith %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../../static/script/auth.js"></script>
+    </body>
+</html>

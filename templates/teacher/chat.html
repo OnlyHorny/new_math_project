@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../../static/CSS/chat.css"
+        />
+        <title>Мессенджер</title>
+    </head>
+    <body>
+        <div class="main-window">
+            <div class="header">
+                <div class="label-class">
+                    <label>Обучающая система по дисциплине «Теория игр»</label>
+                </div>
+            </div>
+            <div class="main-block">
+                <div class="head">
+                    <div class="head-buttons">
+                        <div class="profile-button">
+                            <a href="{{url_for('main_page')}}">
+                                <div class="img-div">
+                                    <img
+                                        src="../../static/images/back-icon.png"
+                                        alt=""
+                                    />
+                                </div>
+                                <span>Назад</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="welcome">
+                        <span>Мессенджер</span>
+                    </div>
+                </div>
+                <div class="workspace">
+                    <div class="user-selector">
+                        <span>Обучающиеся</span>
+
+                        <div class="user-list">
+                            {% for index, item in users.iterrows() %}
+                            <a href="{{item['username']}}"
+                                ><div class="user">
+                                    <span>{{item['user']}}</span>
+                                    <!-- лейбл на случай нового сообщения -->
+                                    <label class="new-messages">1</label>
+                                </div></a
+                            >
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="user-viewer">
+                        <div class="mess-head">
+                            <b>Молчанов В.Д., МГУ им. Ломоносова</b>
+                        </div>
+                        <div class="messenger">
+                            <div class="your-mess">
+                                <h4>Вы</h4>
+                                <label>Привет!</label>
+                            </div>
+                            <div class="not-your-mess">
+                                <h4>Молчанов В.Д.</h4>
+                                <label>Привет!</label>
+                            </div>
+                        </div>
+                        <div class="answer">
+                            Сообщение<br />
+                            <input type="text" />
+                            <button>Отправить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../static/script/auth.js"></script>
+        <script src="../../static/script/check_answer.js"></script>
+    </body>
+</html>

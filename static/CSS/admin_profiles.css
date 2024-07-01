@@ -67,7 +67,7 @@ h3 {
 .welcome {
     display: flex;
     text-align: left;
-    justify-content: center;
+    /* margin-left: 35px; */
     align-items: center;
 }
 .welcome span {
@@ -78,8 +78,8 @@ h3 {
 .head-buttons {
     display: flex;
     flex-direction: row;
-    justify-content: end;
-    margin-right: 20px;
+    width: 10%;
+    /* margin-right: -650px; */
 }
 .head-buttons img {
     width: 90%;
@@ -128,7 +128,22 @@ h3 {
     width: 95%;
     margin: 0 auto;
 }
-.theme-viewer {
+.search {
+    height: auto;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.user-selector input {
+    height: auto;
+    width: 60%;
+    font-size: 11pt;
+}
+.user-selector button {
+    height: auto;
+    width: 15%;
+    font-size: 11pt;
+}
+.user-viewer {
     flex-basis: 185%;
     overflow: auto;
     background-color: #e4e1e1;
@@ -137,27 +152,40 @@ h3 {
     margin-top: 40px;
     height: 85%;
     width: 80%;
+    padding: 5px;
 }
-.theme-selector {
+.user-viewer * {
+    height: auto;
+    width: auto;
+    margin: 8px;
+    font-size: 13pt;
+}
+.profile-buttons {
+    text-align: end;
+}
+.user-viewer button {
+    padding: 5px;
+}
+.user-selector {
     padding-left: 15px;
     display: flex;
     flex-direction: column;
     max-width: 390px;
     max-height: 620px;
 }
-.theme-selector span {
+.user-selector span {
     font-size: 15pt;
-    margin: 10px;
+    margin: 10px 0;
     height: 5%;
 }
-.theme-list {
-    height: 85%;
+.user-list {
+    height: 78%;
     width: 80%;
     background-color: #e4e1e1;
     border-radius: 10px;
     border: 1.5px solid black;
 }
-.theme {
+.user {
     display: flex;
     border: 1px solid black;
     border-radius: 5px;
@@ -169,20 +197,20 @@ h3 {
     justify-content: center;
     overflow: hidden;
 }
-.theme span {
+.user span {
     font-size: 12pt;
     height: 75%;
     width: 90%;
     margin: 0;
     padding: 0;
 }
-.theme:hover {
+.user:hover {
     background-color: #f1f1f1;
 }
 .img-div:hover {
     background-color: #e4e1e1;
 }
-.theme-page {
+.user-page {
     overflow: auto;
     height: 90%;
     width: 85%;
@@ -191,22 +219,22 @@ h3 {
     padding: 1.5em;
     border: thin black solid;
 }
-.theme-page h3 {
+.user-page h3 {
     font-size: 16pt;
     height: 2em;
 }
-.theme-page p {
+.user-page p {
     text-align: justify;
     height: auto;
 }
-.theme-page input {
+.user-page input {
     height: auto;
     width: auto;
     font-size: 14pt;
     margin: 2px;
     padding: 3px;
 }
-.theme-page button {
+.user-page button {
     height: auto;
     width: auto;
     font-size: 13pt;
