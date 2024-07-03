@@ -16,7 +16,6 @@ def main_page():
     conn = get_db_connection()
     content = get_lesson(conn, 1)
     lessons = get_all_lessons(conn)
-    print(lessons, file=sys.stdout)
     html = render_template('student/main_page.html',
                            student_name=student_name,
                            lessons=lessons,
