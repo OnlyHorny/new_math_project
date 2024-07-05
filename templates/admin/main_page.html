@@ -52,9 +52,9 @@
                         <span>Список тем</span>
                         <div class="theme-list">
                             {% for index, item in lessons.iterrows() %}
-                            <a href="{{item['ID_lessons']}}"
+                            <a href="{{item['Id_tema']}}"
                                 ><div class="theme">
-                                    <span>{{item['Subject']}}</span>
+                                    <span>{{item['Name_tema']}}</span>
                                 </div></a
                             >
                             {% endfor %}
@@ -63,9 +63,10 @@
                     <div class="theme-viewer">
                         <div class="theme-page">
                             <h3>Тема: {{lesson_content[0]}}</h3>
-                            <p>{{lesson_content[1]}}</p>
+                            <p>{{lesson_content[1]|safe}}</p>
                             <br />
-                           {% if lesson_content[2]!= None %}
+
+                            {% if lesson_content[2]!= None %}
                             <h3>Практическое задание</h3>
                             <p>{{ lesson_content[2]}}</p>
                             <br />

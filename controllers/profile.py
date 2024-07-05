@@ -1,6 +1,7 @@
 from app import app
 from flask import render_template, session, redirect, url_for, request, flash
 from models.profile_model import get_password, update_userdata, check_unique
+from models.main_page_model import get_profile
 from utils import get_db_connection
 
 @app.route('/profile', methods=['POST', 'GET'])
@@ -20,9 +21,21 @@ def profile():
                 session['username'] = request.form['new_username']
             else:
                 flash('Данное имя пользователя уже занято')
-
-    html = render_template('student/profile.html',
-                           username=session.get('username'),
-                           url_for=url_for,
-                           password=get_password(conn, session['username']))
+    profileUser = get_profile(conn, session.get('username'))
+    #if profileUser.to_string(header=False, index=False) == 'Admin':
+        #html = render_template('admin/profiles_edit.html',
+                               #username=session.get('username'),
+                               #url_for=url_for,
+                               #password=get_password(conn, session['username'])
+        # )
+    if profileUser.to_string(header=False, index=False) == 'Teacher':
+        html = render_template('teacher/profile.html',
+                                   username=session.get('username'),
+                                   url_for=url_for,
+                                   password=get_password(conn, session['username']))
+    else:
+        html = render_template('student/profile.html',
+                               username=session.get('username'),
+                               url_for=url_for,
+                               password=get_password(conn, session['username']))
     return html
