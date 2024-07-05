@@ -65,9 +65,9 @@
                             <h3>Тема: {{lesson_content[0]}}</h3>
                             <p>{{lesson_content[1]}}</p>
                             <br />
+                           {% if lesson_content[2]!= None %}
                             <h3>Практическое задание</h3>
-
-                            <p>{{lesson_content[2]}}</p>
+                            <p>{{ lesson_content[2]}}</p>
                             <br />
                             <input
                                 type="text"
@@ -79,9 +79,8 @@
                                 id="answer"
                                 value="{{lesson_content[3]}}"
                             />
-                            <button id="check_answer_button">
-                                Подтвердить
-                            </button>
+                            <button id="check_answer_button">Проверить</button>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

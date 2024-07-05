@@ -13,8 +13,8 @@ FROM user WHERE login = '{username}';
 def update_userdata(conn, old_username, new_username, new_password):
     cur = conn.cursor()
     cur.execute(f'''UPDATE user
-SET login = '{new_username}', password = '{new_password}'
-WHERE login = '{old_username}';''')
+                    SET login = '{new_username}', password = '{new_password}'
+                    WHERE login = '{old_username}';''')
     conn.commit()
 
 

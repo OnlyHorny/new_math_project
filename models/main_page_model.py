@@ -5,8 +5,8 @@ def get_lesson(conn, id):
     return pd.read_sql(f'''
     SELECT Tema.Name_tema,
     TMaterial.Text,
-    CASE WHEN PMaterial.Text IS NULL OR PMaterial.Text = '' THEN NULL ELSE PMaterial.Text END AS PMaterial_Text,
-    CASE WHEN PMaterial.Difficulty IS NULL OR PMaterial.Difficulty = '' THEN NULL ELSE PMaterial.Difficulty END AS PMaterial_Difficulty
+        CASE WHEN PMaterial.Text IS NULL OR PMaterial.Text = '' THEN NULL ELSE PMaterial.Text END AS PMaterial_Text,
+        CASE WHEN PMaterial.Difficulty IS NULL OR PMaterial.Difficulty = '' THEN NULL ELSE PMaterial.Difficulty END AS PMaterial_Difficulty
     FROM Course
     Join Tema on Course.Id_tema=Tema.Id_tema
     Join TMaterial on Course.Id_TMaterial=TMaterial.Id_TMaterial

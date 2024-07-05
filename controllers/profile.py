@@ -3,7 +3,6 @@ from flask import render_template, session, redirect, url_for, request, flash
 from models.profile_model import get_password, update_userdata, check_unique
 from utils import get_db_connection
 
-
 @app.route('/profile', methods=['POST', 'GET'])
 def profile():
     conn = get_db_connection()
