@@ -35,15 +35,14 @@ h3 {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.452);
 }
 .main-window h3 {
-    text-align: left;
+    text-align: center;
     font-weight: 500;
-    font-size: 16pt;
+    font-size: 20pt;
 }
 .main-window > .header {
     display: flex;
     align-items: center;
     text-align: left;
-    min-height: 43px;
     font-size: 12pt;
     max-height: 43px;
     border-radius: 15px 15px 0 0;
@@ -51,7 +50,7 @@ h3 {
 }
 .label-class {
     height: 60%;
-    width: 93%;
+    width: 90%;
     margin: 0 auto;
 }
 .main-block {
@@ -63,6 +62,7 @@ h3 {
     height: 12%;
     display: flex;
     flex-direction: row;
+    margin-bottom: 10px;
 }
 .welcome {
     display: flex;
@@ -78,21 +78,18 @@ h3 {
 .head-buttons {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: start;
     margin-right: 20px;
+    width: 40%;
+    margin-left: 20px;
 }
 .head-buttons img {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
 }
 .chat-button {
     width: 50px;
     height: 50px;
-    margin: 0 10px;
-}
-.request-button {
-    width: 80px;
-    height: 75px;
     margin: 0 10px;
 }
 .game-button {
@@ -101,9 +98,8 @@ h3 {
     margin: 0 10px;
 }
 .profile-button {
-    /*было по 50*/
-    width: 75px;
-    height: 75px;
+    width: 50px;
+    height: 50px;
     margin: 0 10px;
 }
 .img-div {
@@ -113,11 +109,6 @@ h3 {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-
-    /* нововведение */
-    width: 50px;
-    height: 50px;
-    margin-left: 15px;
 }
 .head-buttons span {
     display: block;

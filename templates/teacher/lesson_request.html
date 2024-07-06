@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../../static/CSS/lesson_request.css"
+        />
+        <title>Страница преподавателя</title>
+    </head>
+    <body>
+        <div class="main-window">
+            <div class="header">
+                <div class="label-class">
+                    <label>Обучающая система по дисциплине "Теория игр"</label>
+                </div>
+            </div>
+            <div class="main-block">
+                <div class="head">
+                    <div class="head-buttons">
+                        <div class="profile-button">
+                            <a href="{{url_for('main_page')}}">
+                                <div class="img-div">
+                                    <img
+                                        src="../../static/images/back-icon.png"
+                                        alt=""
+                                    />
+                                </div>
+                                <span>Назад</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="welcome">
+                        <span>Заявка на добавление учебного материала</span>
+                    </div>
+                </div>
+
+                <div class="workspace">
+                    <h2>Выберите тип материала:</h2>
+                    <form id="materialTypeForm" class="selector">
+                        <label>
+                            <input
+                                type="radio"
+                                name="materialType"
+                                value="theory"
+                                onclick="showForm('theory')"
+                            />
+                            Теоретический материал
+                        </label>
+                        <label>
+                            <input
+                                type="radio"
+                                name="materialType"
+                                value="practice"
+                                onclick="showForm('practice')"
+                            />
+                            Практический материал
+                        </label>
+                    </form>
+
+                    <div
+                        id="theoryForm"
+                        class="form-container"
+                        style="display: none"
+                    >
+                        <h4>Форма для теоретического материала:</h4>
+                        <form id="theoryMaterialForm" style="display: none">
+                            <label for="theoryTitle">Заголовок:</label><br />
+                            <input
+                                type="text"
+                                id="theoryTitle"
+                                name="theoryTitle"
+                            /><br />
+                            <label for="theoryContent">Содержание:</label><br />
+                            <textarea
+                                id="theoryContent"
+                                name="theoryContent"
+                            ></textarea
+                            ><br />
+                            <button
+                                type="button"
+                                onclick="submitForm('theoryMaterialForm')"
+                            >
+                                Отправить
+                            </button>
+                        </form>
+                    </div>
+
+                    <div
+                        id="practiceForm"
+                        class="form-container"
+                        style="display: none"
+                    >
+                        <h4>Форма для практического материала:</h4>
+                        <form id="practiceMaterialForm" style="display: none">
+                            <label for="practiceTitle">Заголовок:</label><br />
+                            <input
+                                type="text"
+                                id="practiceTitle"
+                                name="practiceTitle"
+                            /><br />
+                            <label for="practiceContent"
+                                >Описание практического материала:</label
+                            ><br />
+                            <textarea
+                                id="practiceContent"
+                                name="practiceContent"
+                            ></textarea
+                            ><br />
+                            <label for="practiceAnswer">Ответ:</label><br />
+                            <input
+                                type="text"
+                                id="practiceAnswer"
+                                name="practiceAnswer"
+                            /><br />
+                            <button
+                                type="button"
+                                onclick="submitForm('practiceMaterialForm')"
+                            >
+                                Отправить
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../static/script/lesson_request.js"></script>
+        <script src="../../static/script/auth.js"></script>
+    </body>
+</html>

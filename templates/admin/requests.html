@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../../static/CSS/requests.css"
+        />
+        <title>Страница администратора</title>
+    </head>
+    <body>
+        <div class="main-window">
+            <div class="header">
+                <div class="label-class">
+                    <label>Обучающая система по дисциплине «Теория игр»</label>
+                </div>
+            </div>
+            <div class="main-block">
+                <div class="head">
+                    <div class="head-buttons">
+                        <div class="profile-button">
+                            <a href="{{url_for('main_page')}}">
+                                <div class="img-div">
+                                    <img
+                                        src="../../static/images/back-icon.png"
+                                        alt=""
+                                    />
+                                </div>
+                                <span>Назад</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="welcome">
+                        <span>Список заявок</span>
+                    </div>
+                </div>
+                <div class="workspace">
+                    <div class="theme-selector">
+                        <span>Список заявок</span>
+                        <div class="theme-list">
+                            <!-- изменить на заявки, а не темы -->
+                            {% for index, item in lessons.iterrows() %}
+                            <a href="{{item['Id_tema']}}"
+                                ><div class="theme">
+                                    <span>{{item['Name_tema']}}</span>
+                                </div></a
+                            >
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="theme-viewer">
+                        <div class="theme-page">
+                            {% if request_mat == theo %}
+                            <div class="theo-mat">
+                                <h3>Тема: {{request_mat_name}}</h3>
+                                <h3>Теоретический материал</h3>
+                                <p>Предложил: {{request_author}}</p>
+                                <p>{{request_mat_desc|safe}}</p>
+
+                                <br />
+                                <button
+                                    id="correct"
+                                    style="
+                                        background-color: rgb(50, 184, 50);
+                                        color: white;
+                                        padding-left: 5px;
+                                        padding-right: 5px;
+                                    "
+                                >
+                                    Одобрить
+                                </button>
+                                <button
+                                    id="incorrect"
+                                    style="
+                                        background-color: rgb(189, 52, 28);
+                                        color: white;
+                                        padding-left: 5px;
+                                        padding-right: 5px;
+                                    "
+                                >
+                                    Отклонить
+                                </button>
+                            </div>
+                            {% endif %} {% if request_mat == pract %}
+                            <div class="pract-mat">
+                                <h3>Тема: {{request_mat_name}}</h3>
+                                <h3>Практическое задание</h3>
+                                <p>Предложил: {{request_author}}</p>
+                                <p>{{ request_mat_desc}}</p>
+                                <br />
+                                <p>Правильный ответ: {{ request_mat_ans }}</p>
+                                <br />
+                                <button
+                                    id="correct"
+                                    style="
+                                        background-color: rgb(50, 184, 50);
+                                        color: white;
+                                        padding-left: 5px;
+                                        padding-right: 5px;
+                                    "
+                                >
+                                    Одобрить
+                                </button>
+                                <button
+                                    id="incorrect"
+                                    style="
+                                        background-color: rgb(189, 52, 28);
+                                        color: white;
+                                        padding-left: 5px;
+                                        padding-right: 5px;
+                                    "
+                                >
+                                    Отклонить
+                                </button>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../static/script/auth.js"></script>
+        <script src="../../static/script/check_answer.js"></script>
+    </body>
+</html>
