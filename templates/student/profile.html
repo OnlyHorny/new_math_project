@@ -39,30 +39,54 @@
 
                 <div class="workspace">
                     <div class="col1">
-                        <label for="FIO">ФИО</label><br />
-                        <input type="text" /><br />
-                        <label for="school">Учебное заведение</label><br />
-                        <input type="text" /><br />
-                        <label for="area">Название направления</label><br />
-                        <input type="text" /><br />
-                        <label for="course">Курс</label><br />
-                        <input type="text" /><br />
+                        {% if profile_student[0]!= None %}
+                        <label>ФИО</label> <br />
+                        <input type="text" value="{{profile_student[0]}}"/> <br />
+                        {% else %}
+                        <label>ФИО</label> <br />
+                        <input type="text"/> <br />
+                        {% endif %}
+
+                        {% if profile_student[1]!= None %}
+                        <label>Учебное заведение</label> <br />
+                        <input type="text" value="{{profile_student[1]}}"/> <br />
+                        {% else %}
+                         <label>Учебное заведение</label> <br />
+                        <input type="text"/><br />
+                        {% endif %}
+
+                        {% if profile_student[2]!= None %}
+                        <label> Курс </label> <br />
+                        <input type="text" value="{{profile_student[2]}}"/> <br />
+                        {% else %}
+                         <label> Курс </label> <br />
+                        <input type="text"/><br />
+                        {% endif %}
+
                     </div>
-                    <div class="col2">
-                        <label for="email">Email</label><br />
-                        <input type="text" /><br />
-                        <label for="username">Логин</label><br />
-                        <input type="text" /><br />
-                        <label for="password">Пароль</label><br />
-                        <input type="text" /><br />
+                    <div class= "col2 " >
+                        {% if profile_student[3]!= None %}
+                        <label > Email </label> <br />
+                        <input type = "text" value="{{profile_student[3]}}"/> <br />
+                        {% else %}
+                         <label> Email </label> <br />
+                        <input type="text"/><br />
+                        {% endif %}
+
+                        <label > Логин </label> <br />
+                        <input type = "text" value="{{profile_student[4]}}"/> <br />
+
+                        <label > Пароль </label> <br />
+                        <input type="text" value="{{profile_student[5]}}"/> <br />
+
                         <div class="buttons">
-                            <a href="auth"
-                                ><button class="red-button" id="log_out_button">
+                            <a href="auth">
+                                <button class="red-button" id="log_out_button">
                                     Выйти из аккаунта
                                 </button>
                             </a>
-                            <a href="{{url_for('main_page')}}"
-                                ><button id="save_button">Сохранить</button>
+                            <a href="{{url_for('main_page')}}">
+                                <button id="save_button">Сохранить</button>
                             </a>
 
                             <script src="../../static/script/button_handler.js"></script>

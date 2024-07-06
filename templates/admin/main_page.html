@@ -70,15 +70,15 @@
                             >
                             {% endfor %}
                             <hr />
-                            <!-- исправь название таблицы с доп уроками и сами ее атрибуты -->
-                            {% for index, item in sub_lessons.iterrows() %}
+                            <!-- исправь название таблицы с доп уроками и сами ее атрибуты-->
+                           {# {% for index, item in sub_lessons.iterrows() %}
                             <a href="{{item['Id_tema']}}">
                                 {{item[author]}}:
                                 <div class="theme">
                                     <span>{{item['Name_tema']}}</span>
                                 </div></a
                             >
-                            {% endfor %}
+                            {% endfor %}#}
                         </div>
                     </div>
                     <div class="theme-viewer">
@@ -89,7 +89,7 @@
 
                             {% if lesson_content[2]!= None %}
                             <h3>Практическое задание</h3>
-                            <p>{{ lesson_content[2]}}</p>
+                            <p>{{ lesson_content[2]|safe}}</p>
                             <br />
                             <input
                                 type="text"

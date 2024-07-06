@@ -66,18 +66,17 @@
                             <a href="{{item['Id_tema']}}"
                                 ><div class="theme">
                                     <span>{{item['Name_tema']}}</span>
-                                </div></a
-                            >
+                                </div></a>
                             {% endfor %}
                             <hr />
-                            <!-- исправь название таблицы с доп уроками и сами ее атрибуты -->
-                            {% for index, item in sub_lessons.iterrows() %}
+                            <strong>Дополнительные материалы</strong>
+                            <hr />
+                            {% for index, item in DopMaterial.iterrows() %}
                             <a href="{{item['Id_tema']}}">
-                                {{item[author]}}:
+                                {{item['Name']}}:
                                 <div class="theme">
                                     <span>{{item['Name_tema']}}</span>
-                                </div></a
-                            >
+                                </div> </a>
                             {% endfor %}
                         </div>
                     </div>
@@ -86,10 +85,9 @@
                             <h3>Тема: {{lesson_content[0]}}</h3>
                             <p>{{lesson_content[1]|safe}}</p>
                             <br />
-
                             {% if lesson_content[2]!= None %}
                             <h3>Практическое задание</h3>
-                            <p>{{ lesson_content[2]}}</p>
+                            <p>{{ lesson_content[2]|safe}}</p>
                             <br />
                             <input
                                 type="text"
@@ -105,6 +103,7 @@
                             {% endif %}
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

@@ -41,10 +41,10 @@
                         <span>Обучающиеся</span>
 
                         <div class="user-list">
-                            {% for index, item in users.iterrows() %}
+                            {% for index, item in students.iterrows() %}
                             <a href="{{item['username']}}"
-                                ><div class="user">
-                                    <span>{{item['user']}}</span>
+                                ><div class="Id_student">
+                                    <span>{{item['Name']}}</span>
                                     <!-- лейбл на случай нового сообщения -->
                                     <label class="new-messages">1</label>
                                 </div></a

@@ -48,35 +48,42 @@
 
                         <div class="user-list">
                             {% for index, item in users.iterrows() %}
-                            <a href="{{item['username']}}"
-                                ><div class="user">
-                                    <span>{{item['user']}}</span>
-                                </div></a
-                            >
+                            <a href="{{item['username']}}">
+                                <div class="user">
+                                    <span>{{item['Login']}}</span>
+                                </div> </a>
                             {% endfor %}
                         </div>
                     </div>
                     <div class="user-viewer">
-                        <label for="last_name">Фамилия</label>
+
+                        <label> Фамилия</label>
                         <input type="text" /><br />
-                        <label for="1st_name">Имя</label>
+                        <label> Имя</label>
                         <input type="text" /><br />
-                        <label for="f_name">Отчество</label>
+                        <label> Отчество</label>
                         <input type="text" /><br />
-                        <label for="email">Email</label>
+                        <label> Email</label>
                         <input type="text" /><br />
-                        <label for="school">Учебное заведение</label>
+                        <label> Учебное заведение</label>
                         <input type="text" /><br />
                         <!-- если студент: -->
-                        <label for="area">Название направления</label>
+                        <label> Название направления</label>
                         <input type="text" /><br />
-                        <label for="course">Курс</label>
+                        <label> Курс</label>
                         <input type="text" /><br />
                         <div class="profile-buttons">
                             <button id="set_teacher">
                                 Назначить преподавателем
                             </button>
                             <button id="save_button">Сохранить</button>
+                        </div>
+                        <div class="buttons">
+                            <a href="auth">
+                                <button class="red-button" id="log_out_button">
+                                    Выйти из аккаунта
+                                </button>
+                            </a>
                         </div>
 
                         <!-- если преподаватель:

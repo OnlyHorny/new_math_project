@@ -41,15 +41,14 @@
                         <span>Преподаватели</span>
 
                         <div class="user-list">
-                            {% for index, item in users.iterrows() %}
+                            {% for index, item in teachers.iterrows() %}
                             <a href="{{item['username']}}"
-                                ><div class="user">
-                                    <span>{{item['user']}}</span>
+                                ><div class="Id_teacher">
+                                    <span>{{item['Name']}}</span>
                                     <!-- лейбл на случай нового сообщения -->
                                     <label class="new-messages">1</label>
                                 </div></a
                             >
-
                             {% endfor %}
                         </div>
                     </div>

@@ -39,22 +39,45 @@
 
                 <div class="workspace">
                     <div class="col1">
-                        <label for="FIO">ФИО</label><br />
-                        <input type="text" /><br />
-                        <label for="school">Учебное заведение</label><br />
-                        <input type="text" /><br />
-                        <label for="area">Научная степень</label><br />
-                        <input type="text" /><br />
-                        <label for="course">Должность</label><br />
-                        <input type="text" /><br />
+                        {% if profile_teacher[0]!= None %}
+                        <label> ФИО </label><br />
+                        <input type="text" value="{{profile_teacher[0]}}"/><br />
+                        {% else %}
+                        <label>ФИО</label> <br />
+                        <input type="text"/> <br />
+                        {% endif %}
+
+                        {% if profile_teacher[1]!= None %}
+                        <label> Учебное заведение </label><br />
+                        <input type="text" value="{{profile_teacher[1]}}"/><br />
+                        {% else %}
+                        <label>Учебное заведение</label> <br />
+                        <input type="text"/> <br />
+                        {% endif %}
+
+                        {% if profile_teacher[2]!= None %}
+                        <label> Научная степень </label><br />
+                        <input type="text" value="{{profile_teacher[2]}}"/> <br />
+                        {% else %}
+                        <label>Научная степень</label> <br />
+                        <input type="text"/> <br />
+                        {% endif %}
+
+                        {% if profile_teacher[3]!= None %}
+                        <label> Должность </label><br />
+                        <input type="text" value="{{profile_teacher[3]}}"/><br />
+                        {% else %}
+                        <label>Должность</label> <br />
+                        <input type="text"/> <br />
+                        {% endif %}
+
                     </div>
                     <div class="col2">
-                        <label for="email">Email</label><br />
-                        <input type="text" /><br />
-                        <label for="username">Логин</label><br />
-                        <input type="text" /><br />
-                        <label for="password">Пароль</label><br />
-                        <input type="text" /><br />
+
+                        <label> Логин </label><br />
+                        <input type="text" value="{{profile_teacher[4]}}"/><br />
+                        <label> Пароль </label><br />
+                        <input type="text" value="{{profile_teacher[5]}}"/><br />
                         <div class="buttons">
                             <a href="auth"
                                 ><button class="red-button" id="log_out_button">

@@ -18,10 +18,26 @@ def get_lesson(conn, id):
     WHERE ID_course == {id};''', conn)
 
 
+def get_dopTMaterial_lesson(conn, id):
+    return pd.read_sql(f'''
+    SELECT Tema.Name_tema, TMaterial.Text
+    FROM TMaterial
+    Join Tema on TMaterial.Id_tema=Tema.Id_tema
+    where Id_teacher not Null;''', conn)
+
+
 def get_all_lessons(conn):
     return pd.read_sql(f'''SELECT Tema.Id_tema, Tema.Name_tema
     FROM Course
     Join Tema on Course.Id_tema=Tema.Id_tema;''', conn)
+
+
+def get_dopTMaterial(conn):
+    return pd.read_sql(f'''SELECT Tema.Id_tema, teacher.Name, Tema.Name_tema 
+        FROM TMaterial
+        Join Tema on TMaterial.Id_tema=Tema.Id_tema
+        Join teacher on TMaterial.Id_teacher=teacher.Id
+        where Id_teacher not Null;''', conn)
 
 
 def get_name_fio(conn, user):
