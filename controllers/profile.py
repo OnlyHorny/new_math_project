@@ -32,6 +32,7 @@ def profile():
                                url_for=url_for,
                                users=users)
         print(profileUser.to_string(header=False, index=False))
+    else:
         if profileUser.to_string(header=False, index=False) == 'Teacher':
             id_profile = get_id_profile_teacher(conn, session.get('username'))
             DataProfile = get_data_profile_teacher(conn, id_profile.to_string(header=False, index=False))
@@ -39,12 +40,13 @@ def profile():
             html = render_template('teacher/profile.html',
                                    profile_teacher=DataProfile.iloc[0].to_list(),
                                    url_for=url_for)
-            print(profileUser.to_string(header=False, index=False))
-    else:
-        id_profile = get_id_profile_student(conn, session.get('username'))
-        DataProfile = get_data_profile_student(conn, id_profile.to_string(header=False, index=False))
-        html = render_template('student/profile.html',
-                               profile_student=DataProfile.iloc[0].to_list(),
-                               url_for=url_for)
-        print(profileUser.to_string(header=False, index=False)+'3')
+            print(profileUser.to_string(header=False, index=False) + '2')
+        else:
+            if profileUser.to_string(header=False, index=False) == 'Student':
+                id_profile = get_id_profile_student(conn, session.get('username'))
+                DataProfile = get_data_profile_student(conn, id_profile.to_string(header=False, index=False))
+                html = render_template('student/profile.html',
+                                       profile_student=DataProfile.iloc[0].to_list(),
+                                       url_for=url_for)
+                print(profileUser.to_string(header=False, index=False) + '3')
     return html

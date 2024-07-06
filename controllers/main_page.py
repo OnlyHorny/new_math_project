@@ -84,6 +84,5 @@ def lesson(lesson_id):
                                student_name=student_name,
                                lessons=lessons,
                                DopMaterial=DopMaterial,
-                               contentDop=contentDop.iloc[0].to_list(),
                                lesson_content=content.iloc[0].to_list())
     return html
