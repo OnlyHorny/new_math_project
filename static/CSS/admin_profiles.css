@@ -241,3 +241,15 @@ h3 {
     margin: 2px;
     padding: 4px;
 }
+.exit-button {
+    margin-right: 50px;
+    text-align: end;
+}
+
+.exit-button button {
+    margin-top: 10px;
+    width: auto;
+    height: auto;
+    font-size: 14pt;
+    padding: 5px;
+}

@@ -41,43 +41,47 @@
                     <div class="col1">
                         {% if profile_student[0]!= None %}
                         <label>ФИО</label> <br />
-                        <input type="text" value="{{profile_student[0]}}"/> <br />
+                        <input type="text" value="{{profile_student[0]}}" />
+                        <br />
                         {% else %}
                         <label>ФИО</label> <br />
-                        <input type="text"/> <br />
-                        {% endif %}
-
-                        {% if profile_student[1]!= None %}
+                        <input type="text" /> <br />
+                        {% endif %} {% if profile_student[1]!= None %}
                         <label>Учебное заведение</label> <br />
-                        <input type="text" value="{{profile_student[1]}}"/> <br />
+                        <input type="text" value="{{profile_student[1]}}" />
+                        <br />
                         {% else %}
-                         <label>Учебное заведение</label> <br />
-                        <input type="text"/><br />
-                        {% endif %}
-
-                        {% if profile_student[2]!= None %}
+                        <label>Учебное заведение</label> <br />
+                        <input type="text" /><br />
+                        {% endif %} {% if profile_student[2]!= None %}
                         <label> Курс </label> <br />
-                        <input type="text" value="{{profile_student[2]}}"/> <br />
+                        <input type="text" value="{{profile_student[2]}}" />
+                        <br />
                         {% else %}
-                         <label> Курс </label> <br />
-                        <input type="text"/><br />
+                        <label> Курс </label> <br />
+                        <input type="text" /><br />
                         {% endif %}
-
                     </div>
-                    <div class= "col2 " >
+                    <div class="col2">
                         {% if profile_student[3]!= None %}
-                        <label > Email </label> <br />
-                        <input type = "text" value="{{profile_student[3]}}"/> <br />
+                        <label> Email </label> <br />
+                        <input type="text" value="{{profile_student[3]}}" />
+                        <br />
                         {% else %}
-                         <label> Email </label> <br />
-                        <input type="text"/><br />
+                        <label> Email </label> <br />
+                        <input type="text" /><br />
                         {% endif %}
 
-                        <label > Логин </label> <br />
-                        <input type = "text" value="{{profile_student[4]}}"/> <br />
+                        <label> Логин </label> <br />
+                        <input type="text" value="{{profile_student[4]}}" />
+                        <br />
 
-                        <label > Пароль </label> <br />
-                        <input type="text" value="{{profile_student[5]}}"/> <br />
+                        <label> Пароль </label> <br />
+                        <input type="text" value="{{profile_student[5]}}" />
+                        <br />
+                        <button class="request_to_teacher">
+                            Стать преподавателем
+                        </button>
 
                         <div class="buttons">
                             <a href="auth">

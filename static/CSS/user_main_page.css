@@ -181,6 +181,15 @@ h3 {
     margin: 0;
     padding: 0;
 }
+strong {
+    display: inline-block;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+.author {
+    margin-left: 5px;
+}
 .theme:hover {
     background-color: #f1f1f1;
 }

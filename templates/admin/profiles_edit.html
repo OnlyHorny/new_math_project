@@ -35,6 +35,13 @@
                     <div class="welcome">
                         <span>Панель администратора</span>
                     </div>
+                    <div class="exit-button">
+                        <a href="auth">
+                            <button id="log_out_button">
+                                Выйти из аккаунта
+                            </button>
+                        </a>
+                    </div>
                 </div>
                 <div class="workspace">
                     <div class="user-selector">
@@ -51,12 +58,12 @@
                             <a href="{{item['username']}}">
                                 <div class="user">
                                     <span>{{item['Login']}}</span>
-                                </div> </a>
+                                </div>
+                            </a>
                             {% endfor %}
                         </div>
                     </div>
                     <div class="user-viewer">
-
                         <label> Фамилия</label>
                         <input type="text" /><br />
                         <label> Имя</label>
@@ -78,14 +85,6 @@
                             </button>
                             <button id="save_button">Сохранить</button>
                         </div>
-                        <div class="buttons">
-                            <a href="auth">
-                                <button class="red-button" id="log_out_button">
-                                    Выйти из аккаунта
-                                </button>
-                            </a>
-                        </div>
-
                         <!-- если преподаватель:
                         <label for="area">Научная степень</label>
                         <input type="text" /><br />
