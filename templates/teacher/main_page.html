@@ -6,8 +6,7 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="../../static/CSS/user_main_page.css"
-        />
+            href="../../static/CSS/user_main_page.css" />
         <title>Страница преподавателя</title>
     </head>
     <body>
@@ -28,8 +27,7 @@
                                 <div class="img-div">
                                     <img
                                         src="../../static/images/chat-icon.png"
-                                        alt=""
-                                    />
+                                        alt="" />
                                 </div>
                                 <span>Чат</span>
                             </a>
@@ -39,8 +37,7 @@
                                 <div class="img-div">
                                     <img
                                         src="../../static/images/game-icon.png"
-                                        alt=""
-                                    />
+                                        alt="" />
                                 </div>
                                 <span>Игра</span>
                             </a>
@@ -50,8 +47,7 @@
                                 <div class="img-div">
                                     <img
                                         src="../../static/images/user-icon.png"
-                                        alt=""
-                                    />
+                                        alt="" />
                                 </div>
                                 <span>Профиль</span>
                             </a>
@@ -62,24 +58,29 @@
                     <div class="theme-selector">
                         <span
                             >Список тем
-                            <a class="add-theme" href="#"> + </a></span
+                            <a class="add-theme" href="lesson_request">
+                                +
+                            </a></span
                         >
                         <div class="theme-list">
                             {% for index, item in lessons.iterrows() %}
-                            <a href="{{item['Id_tema']}}" >
+                            <a href="{{item['Id_tema']}}">
                                 <div class="theme">
                                     <span>{{item['Name_tema']}}</span>
-                                </div></a>
+                                </div></a
+                            >
                             {% endfor %}
                             <hr />
-                            <!-- исправь название таблицы с доп уроками и сами ее атрибуты-->
-                            {# {%  for index, item in sub_lessons.iterrows() %}
-                            <a href="{{item['Id_tema']}}">
-                                {{item[author]}}:
+                            <strong>Дополнительные материалы</strong>
+                            <hr />
+                            {% for index, item in DopMaterial.iterrows() %}
+                            <a href="{{item['Id_tema']}}" class="author">
+                                {{item['Name']}}:
                                 <div class="theme">
                                     <span>{{item['Name_tema']}}</span>
-                                </div></a>
-                            {% endfor %} #}
+                                </div>
+                            </a>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="theme-viewer">
@@ -95,13 +96,11 @@
                             <input
                                 type="text"
                                 placeholder="Введите ответ"
-                                id="answer_field"
-                            />
+                                id="answer_field" />
                             <input
                                 type="hidden"
                                 id="answer"
-                                value="{{lesson_content[3]}}"
-                            />
+                                value="{{lesson_content[3]}}" />
                             <button id="check_answer_button">Проверить</button>
                             {% endif %}
                         </div>

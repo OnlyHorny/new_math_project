@@ -184,6 +184,8 @@ h3 {
     background-color: #e4e1e1;
     border-radius: 10px;
     border: 1.5px solid black;
+    overflow: scroll;
+    scrollbar-width: none;
 }
 .user {
     display: flex;

@@ -24,52 +24,52 @@
 
                 <div class="auth-form">
                     <form method="post">
-                    <div class="username">
-                        <label for="username">Имя пользователя:</label><br />
-                        <input
-                            type="text"
-                            name="username"
-                            id="username"
-                            placeholder="Введите имя пользователя"
-                        /><br />
-                        <label for="password">Пароль:</label><br />
-                        <input
-                            type="password"
-                            name="password"
-                            id="password"
-                            placeholder="Введите пароль"
-                        /><br />
-                        <div class="showPassword">
-                            <label for="showPass">Показать пароль?</label><br />
+                        <div class="username">
+                            <label for="username">Имя пользователя:</label
+                            ><br />
                             <input
-                                name="showPass"
-                                type="checkbox"
-                                onclick="showPassword()"
-                                id="showPass"
-                            />
-                        </div>
-                        {% if not is_auth %}
-                        <div class="error-message">
-
+                                type="text"
+                                name="username"
+                                id="username"
+                                placeholder="Введите имя пользователя"
+                            /><br />
+                            <label for="password">Пароль: </label>
+                            <br />
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                placeholder="Введите пароль"
+                            /><br />
+                            <div class="showPassword">
+                                <label for="showPass">Показать пароль?</label
+                                ><br />
+                                <input
+                                    name="showPass"
+                                    type="checkbox"
+                                    onclick="showPassword()"
+                                    id="showPass"
+                                />
+                            </div>
+                            {% if not is_auth %}
+                            <div class="error-message">
                                 {% with messages = get_flashed_messages() %}
                                 <p class="description">{{ messages[0] }}</p>
                                 {% endwith %}
+                            </div>
+                            {% endif %}
                         </div>
-                        {% endif %}
-                    </div>
-                    <div class="buttons">
+                        <div class="buttons">
+                            <button type="submit" name="login">Войти</button>
 
-                        <button type="submit" name="login">Войти</button>
-
-                        <a href="reg.html">
-                            <button type="submit" name="reg">
-                                Регистрация
-                            </button>
-                        </a>
-                    </div>
+                            <a href="reg.html">
+                                <button type="submit" name="reg">
+                                    Регистрация
+                                </button>
+                            </a>
+                        </div>
                     </form>
                 </div>
-
             </div>
         </div>
         <script src="../../static/script/auth.js"></script>
